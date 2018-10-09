@@ -68,7 +68,7 @@ export default class TagSearch extends React.Component {
         return (
             <div style={{display: 'flex',alignItems: 'center', justifyContent: 'center'}}>
                 <List IMAGES={this.state.IMAGES} history={this.props.history} />
-                {this.state.showLoading && <img src={ImgLoading} style={{}}/>}
+                {this.state.showLoading && <img src={ImgLoading}/>}
             </div>
         );
     }

@@ -5,7 +5,7 @@ import Explore from './components/Explore'
 import TagSearch from './components/TagSearch'
 import Photo from './components/Photo'
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 export default class App extends React.Component {
     render() {

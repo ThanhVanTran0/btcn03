@@ -1,6 +1,7 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import List from './List'
+
+import ImgLoading from '../images/loading.gif'
 
 class Explore extends React.Component {
 
@@ -10,6 +11,7 @@ class Explore extends React.Component {
             IMAGES: [],
             maxPage: null,
             page: 1,
+            showLoading: true,
         }
         this.handleScroll = this.handleScroll.bind(this)
         this.loadMore = this.loadMore.bind(this)
@@ -25,7 +27,9 @@ class Explore extends React.Component {
             this.setState({
                 IMAGES: photos.photo,
                 maxPage: photos.pages,
-                page: this.state.page + 1
+                page: this.state.page + 1,
+                showLoading: false
+
             })
         } catch (error) {
             alert('ERROR: ' + error.message)
@@ -64,7 +68,10 @@ class Explore extends React.Component {
 
     render() {
         return (
-            <List IMAGES={this.state.IMAGES} history={this.props.history}/>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <List IMAGES={this.state.IMAGES} history={this.props.history} />
+                {this.state.showLoading && <img src={ImgLoading}/>}
+            </div>
         );
     }
 }

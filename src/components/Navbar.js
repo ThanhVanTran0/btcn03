@@ -42,7 +42,7 @@ export default class MyNavbar extends React.Component {
             Explore
         </NavItem>
           <NavItem eventKey={2} href="#">
-            <div class="search-container">
+            <div className="search-container">
               <form onSubmit={this.handleSubmit} action='/search'>
                 <input style={{ color: '#000', width: '300px' }} type="text" placeholder="Search.." name="q" onChange={this.handleChange}/>
               </form>
